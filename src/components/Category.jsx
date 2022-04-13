@@ -14,11 +14,11 @@ function Category({ data, setData }) {
     }
   }, [location]);
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      <p>{location}</p>
       {data[location]?.map(({
-        source, title, url, urlToImage,
-      }) => <Card key={title} name={source?.name} title={title} url={url} urlToImage={urlToImage || 'https://static01.nyt.com/images/2022/04/06/world/06virus-briefing-dc-infections-SWAP2/06virus-briefing-dc-infections-SWAP2-facebookJumbo.jpg'} />)}
+        source, title, urlToImage, publishedAt,
+      }, index) => <Card key={Date.now() + title} name={source?.name} title={title} url={`${location}/${index}`} urlToImage={urlToImage || 'https://static01.nyt.com/images/2022/04/06/world/06virus-briefing-dc-infections-SWAP2/06virus-briefing-dc-infections-SWAP2-facebookJumbo.jpg'} publishedAt={publishedAt} />)}
     </>
   );
 }

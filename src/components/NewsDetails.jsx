@@ -15,46 +15,47 @@ function NewsDetails({ category, index, data }) {
   } = data[`/${category}`][index];
   const { name } = source;
   return (
-
-    <section className="news-page-container">
-      <div className="title"><span>{title}</span></div>
-      <div className="about-title-container">
-        <div className="source-logo">
-          <img src="" alt="" className="logo" />
-        </div>
-        <div className="source-date-container">
-          <div className="source">
-            By
-            {' '}
-            <span>{author}</span>
-            ,
-            {' '}
-            <span>{name}</span>
+    <main className="section-container">
+      <section className="news-page-container">
+        <div className="title"><span>{title}</span></div>
+        <div className="about-title-container">
+          <div className="source-logo">
+            <img src="" alt="" className="logo" />
           </div>
-          <div className="date"><span>{(new Date(publishedAt)).toUTCString()}</span></div>
+          <div className="source-date-container">
+            <div className="source">
+              By
+              {' '}
+              <span>{author}</span>
+              ,
+              {' '}
+              <span>{name}</span>
+            </div>
+            <div className="date"><span>{(new Date(publishedAt)).toUTCString()}</span></div>
+          </div>
         </div>
-      </div>
-      <figure className="related-img-container">
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          <img src={urlToImage} alt={title} title={description} className="url-to-img" />
-        </a>
-        <figcaption>
-          <span>{description}</span>
-        </figcaption>
-      </figure>
-      <article className="content">
-        <span>
-          {content}
-          {' '}
-        </span>
-        <span>
+        <figure className="related-img-container">
           <a href={url} target="_blank" rel="noopener noreferrer">
-            <span>Read More</span>
+            <img src={urlToImage} alt={title} title={description} className="url-to-img" />
           </a>
-        </span>
-      </article>
+          <figcaption>
+            <span>{description}</span>
+          </figcaption>
+        </figure>
+        <article className="content">
+          <span>
+            {content}
+            {' '}
+          </span>
+          <span>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <span>Read More</span>
+            </a>
+          </span>
+        </article>
 
-    </section>
+      </section>
+    </main>
   );
 }
 

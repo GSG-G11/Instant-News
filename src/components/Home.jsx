@@ -7,10 +7,13 @@ import Searched from './Searched';
 function Home({ data, setData }) {
   const [search, setSearch] = useState('');
   useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
     if (search) {
-      axios.get(`https://newsapi.org/v2/everything?q=${search}&apiKey=${process.env.REACT_APP_API_KEY}`)
-        .then((res) => setData({ ...data, '/search': res.data.articles }));
+      axios.get(`https://newsapi.org/v2/everything?q=${search}&apiKey=${process.env.REACT_APP_API_KEY}`, { signal })
+        .then((res) => setData({ ...data, '/search': res.data.articles })).catch((error) => console.log(error.message));
     }
+    return () => controller.abort();
   }, [search]);
   return (
     <div>

@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav';
-import Category from './components/Category';
-import Home from './components/Home';
-import './App.css';
-import NewsPage from './components/NewsPage';
-import PageNotFound from './components/PageNotFound';
+import {
+  Nav, Category, Home, NewsPage, PageNotFound,
+} from './components';
 
 function App() {
-  // const [category, setCategory] = useState('general');
   const [data, setData] = useState({
     '/general': [{}],
     '/business': [{}],

@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PageNotFound from './PageNotFound';
 import './details.css';
 
 function NewsDetails({ category, index, data }) {
+  if (!data[`/${category}`][index]) return <PageNotFound />;
   const {
     source = {},
     author,
@@ -13,7 +15,7 @@ function NewsDetails({ category, index, data }) {
     publishedAt,
     content,
   } = data[`/${category}`][index];
-  const { name } = source;
+  const name = source?.name;
   return (
     <main className="section-container">
       <section className="news-page-container">

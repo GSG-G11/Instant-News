@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import NewsDetails from './NewsDetails';
+import PageNotFound from './PageNotFound';
 
 function NewsPage({ data }) {
   const { category, index } = useParams();
@@ -16,7 +17,7 @@ function NewsPage({ data }) {
     case 'search':
       return (<NewsDetails category={category} index={index} data={data} />);
     default:
-      return (<div>404</div>);
+      return (<PageNotFound />);
   }
 }
 

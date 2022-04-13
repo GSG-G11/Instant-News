@@ -2,13 +2,17 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import Card from './Card';
 
-function Searched({ data }) {
+function Searched({ data, search }) {
   return (
-    <>
-      {data.map(({
-        source: { name }, title, url, urlToImage,
-      }) => <Card key={Date.now() + title} name={name} title={title} url={url} urlToImage={urlToImage || 'https://static01.nyt.com/images/2022/04/06/world/06virus-briefing-dc-infections-SWAP2/06virus-briefing-dc-infections-SWAP2-facebookJumbo.jpg'} />)}
-    </>
+    <div>
+      {data.length === 0 ? (
+        <h2>
+          {`No result for ${search}`}
+        </h2>
+      ) : data.map(({
+        source, title, urlToImage, publishedAt,
+      }, index) => <Card key={Date.now() + title} name={source?.name} title={title} url={`/search/${index}`} urlToImage={urlToImage || 'https://static01.nyt.com/images/2022/04/06/world/06virus-briefing-dc-infections-SWAP2/06virus-briefing-dc-infections-SWAP2-facebookJumbo.jpg'} publishedAt={publishedAt} />)}
+    </div>
   );
 }
 Searched.propTypes = {
@@ -25,6 +29,6 @@ Searched.propTypes = {
     publishedAt: Proptypes.string,
     content: Proptypes.string,
   })).isRequired,
-
+  search: Proptypes.string.isRequired,
 };
 export default Searched;

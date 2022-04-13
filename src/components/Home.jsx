@@ -22,7 +22,7 @@ function Home({ data, setData }) {
           setSearch(value);
         }}
       />
-      {search ? <Searched data={data['/search']} /> : <Category data={data} setData={setData} />}
+      {search ? <Searched data={data['/search']} search={search} /> : <Category data={data} setData={setData} />}
     </div>
   );
 }

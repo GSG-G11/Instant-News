@@ -1,9 +1,10 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import './Card.css';
+import { Link } from 'react-router-dom';
 
 function Card({
-  name, title, url, urlToImage,
+  name, title, url, urlToImage, publishedAt,
 }) {
   return (
     <div className="blog-post">
@@ -15,11 +16,11 @@ function Card({
       </div>
       <div className="blog-post__info">
         <div className="blog-post__date">
-          <span>October 27 2019</span>
+          <span>{(new Date(publishedAt).toDateString())}</span>
           <span>{name}</span>
         </div>
         <h1 className="blog-post__title">{title}</h1>
-        <a href={url} className="blog-post__cta">Read More</a>
+        <Link to={url} className="blog-post__cta">Read More</Link>
       </div>
     </div>
   );
@@ -30,6 +31,7 @@ Card.propTypes = {
   title: Proptypes.string.isRequired,
   url: Proptypes.string.isRequired,
   urlToImage: Proptypes.string.isRequired,
+  publishedAt: Proptypes.string.isRequired,
 };
 
 export default Card;

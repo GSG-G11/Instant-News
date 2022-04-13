@@ -32,4 +32,8 @@ padding-left: 3rem;
     width: 115px;
     height: 115px;
     top: -91px;
-  }  
+  }
+
+  #root{
+    padding-bottom: 2.5rem;
+  }

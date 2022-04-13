@@ -20,23 +20,23 @@ function NewsDetails({ category, index, data }) {
     <main className="section-container">
       <section className="news-page-container">
         <div className="title"><span>{title}</span></div>
-        <div className="about-title-container">
-          <div className="source-logo">
-            <img src="" alt="" className="logo" />
-          </div>
-          <div className="source-date-container">
-            <div className="source">
-              By
-              {' '}
-              <span>{author}</span>
-              ,
-              {' '}
-              <span>{name}</span>
-            </div>
-            <div className="date"><span>{(new Date(publishedAt)).toUTCString()}</span></div>
-          </div>
-        </div>
         <figure className="related-img-container">
+          <div className="about-title-container">
+            <div className="source-logo">
+              <img src="" alt="" className="logo" />
+            </div>
+            <div className="source-date-container">
+              <div className="source">
+                By
+                {' '}
+                <span>{author}</span>
+                ,
+                {' '}
+                <span>{name}</span>
+              </div>
+              <div className="date"><span>{(new Date(publishedAt)).toUTCString()}</span></div>
+            </div>
+          </div>
           <a href={url} target="_blank" rel="noopener noreferrer">
             <img src={urlToImage || 'https://static01.nyt.com/images/2022/04/06/world/06virus-briefing-dc-infections-SWAP2/06virus-briefing-dc-infections-SWAP2-facebookJumbo.jpg'} alt={title} title={description} className="url-to-img" />
           </a>

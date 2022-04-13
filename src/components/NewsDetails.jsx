@@ -38,7 +38,7 @@ function NewsDetails({ category, index, data }) {
         </div>
         <figure className="related-img-container">
           <a href={url} target="_blank" rel="noopener noreferrer">
-            <img src={urlToImage} alt={title} title={description} className="url-to-img" />
+            <img src={urlToImage || 'https://static01.nyt.com/images/2022/04/06/world/06virus-briefing-dc-infections-SWAP2/06virus-briefing-dc-infections-SWAP2-facebookJumbo.jpg'} alt={title} title={description} className="url-to-img" />
           </a>
           <figcaption>
             <span>{description}</span>

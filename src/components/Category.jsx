@@ -10,7 +10,7 @@ function Category({ data, setData }) {
   location = location.pathname === '/' ? '/general' : location.pathname;
   useEffect(() => {
     if (data[location].length === 1) {
-      axios.get(`https://newsapi.org/v2/top-headlines?category=${location.slice(1)}&apiKey=${process.env.REACT_APP_API_KEY}`)
+      axios.get(`https://api.codetabs.com/v1/proxy/?quest=https://newsapi.org/v2/top-headlines?category=${location.slice(1)}&apiKey=${process.env.REACT_APP_API_KEY}`)
         .then((res) => setData({ ...data, [location]: res.data.articles }));
     }
   }, [location]);

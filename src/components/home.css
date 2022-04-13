@@ -1,0 +1,35 @@
+.search-input-container{
+margin: 2rem auto;
+width: 50%;
+position: relative;
+}
+
+.search-input-container input {
+outline: none;
+border: none;
+height: 4rem;
+border-radius: 2rem;
+width: 100%;
+padding-left: 3rem;
+}
+
+.no-content {
+    position: relative;
+    background: lightgray;
+    text-align: center;
+    font-weight: bold;
+    color: gray;
+    margin: 150px 0;
+    padding: 30px;
+    font-size: 2.5rem;
+  }
+  .no-content::before {
+    position: absolute;
+    content: "";
+    left: 70%;
+    background: url(https://www.gstatic.com/devrel-devsite/prod/v3e5e49c86560fa1d4115a3867ece7b214786f7f53a4ea5df16ed22c32fc83928/firebase/images/flame.png)
+      center/100% no-repeat;
+    width: 115px;
+    height: 115px;
+    top: -91px;
+  }  

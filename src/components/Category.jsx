@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import Proptypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 import Card from './Card';
 
 function Category({ data, setData }) {
@@ -16,7 +17,17 @@ function Category({ data, setData }) {
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      {data[location]?.map(({
+      {data[location].length === 1 ? (
+        <div style={{
+          position: 'fixed', top: '50%', left: '50%',
+        }}
+        >
+          <ReactLoading
+            type="spokes"
+            color="#4facfe"
+          />
+        </div>
+      ) : data[location]?.map(({
         source, title, urlToImage, publishedAt,
       }, index) => <Card key={Date.now() + title} name={source?.name} title={title} url={`${location}/${index}`} urlToImage={urlToImage || 'https://static01.nyt.com/images/2022/04/06/world/06virus-briefing-dc-infections-SWAP2/06virus-briefing-dc-infections-SWAP2-facebookJumbo.jpg'} publishedAt={publishedAt} />)}
     </>

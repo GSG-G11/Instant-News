@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Nav.css';
 
 function Nav() {
@@ -8,15 +8,13 @@ function Nav() {
       <span className="logo">Instant News</span>
       <nav>
         <ul className="nav__links">
-          <li><Link to="/">Home</Link></li>
-          <li>
-            <Link to="/business">Business</Link>
-          </li>
-          <li><Link to="/entertainment">Entertainment</Link></li>
-          <li><Link to="/health">Health</Link></li>
-          <li><Link to="/science">Science</Link></li>
-          <li><Link to="/sports">Sports</Link></li>
-          <li><Link to="/technology">Technology</Link></li>
+          <li><NavLink style={({ isActive }) => (isActive ? { color: '#4facfe' } : { color: 'white' })} to="/">Home</NavLink></li>
+          <li><NavLink style={({ isActive }) => (isActive ? { color: '#4facfe' } : { color: 'white' })} to="/business">Business</NavLink></li>
+          <li><NavLink style={({ isActive }) => (isActive ? { color: '#4facfe' } : { color: 'white' })} to="/entertainment">Entertainment</NavLink></li>
+          <li><NavLink style={({ isActive }) => (isActive ? { color: '#4facfe' } : { color: 'white' })} to="/health">Health</NavLink></li>
+          <li><NavLink style={({ isActive }) => (isActive ? { color: '#4facfe' } : { color: 'white' })} to="/science">Science</NavLink></li>
+          <li><NavLink style={({ isActive }) => (isActive ? { color: '#4facfe' } : { color: 'white' })} to="/sports">Sports</NavLink></li>
+          <li><NavLink style={({ isActive }) => (isActive ? { color: '#4facfe' } : { color: 'white' })} to="/technology">Technology</NavLink></li>
         </ul>
       </nav>
     </header>

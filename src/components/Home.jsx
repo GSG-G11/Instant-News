@@ -15,7 +15,7 @@ function Home({ data, setData }) {
         // eslint-disable-next-line no-console
         .then((res) => setData({ ...data, '/search': res.data.articles })).catch((error) => console.log(error.message));
     }
-    return () => { controller.abort(); setData({ ...data, '/search': [{}] }); };
+    return () => { controller.abort(); };
   }, [search]);
   return (
     <div>

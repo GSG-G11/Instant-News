@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import ReactLoading from 'react-loading';
 import Proptypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
-import ReactLoading from 'react-loading';
 import Card from './Card';
 
 function Category({ data, setData }) {

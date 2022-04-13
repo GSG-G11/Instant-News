@@ -5,6 +5,7 @@ import Category from './components/Category';
 import Home from './components/Home';
 import './App.css';
 import NewsPage from './components/NewsPage';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   // const [category, setCategory] = useState('general');
@@ -54,6 +55,7 @@ function App() {
           path="/:category/:index"
           element={<NewsPage data={data} />}
         />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );

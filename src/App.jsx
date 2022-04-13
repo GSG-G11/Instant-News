@@ -4,18 +4,19 @@ import Nav from './components/Nav';
 import Category from './components/Category';
 import Home from './components/Home';
 import './App.css';
+import NewsPage from './components/NewsPage';
 
 function App() {
   // const [category, setCategory] = useState('general');
   const [data, setData] = useState({
-    '/general': [],
-    '/business': [],
-    '/entertainment': [],
-    '/health': [],
-    '/science': [],
-    '/sports': [],
-    '/technology': [],
-    '/search': [],
+    '/general': [{}],
+    '/business': [{}],
+    '/entertainment': [{}],
+    '/health': [{}],
+    '/science': [{}],
+    '/sports': [{}],
+    '/technology': [{}],
+    '/search': [{}],
   });
   return (
     <Router>
@@ -48,6 +49,10 @@ function App() {
         <Route
           path="/technology"
           element={<Category data={data} setData={setData} />}
+        />
+        <Route
+          path="/:category/:index"
+          element={<NewsPage data={data} />}
         />
       </Routes>
     </Router>

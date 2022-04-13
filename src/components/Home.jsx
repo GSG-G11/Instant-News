@@ -12,6 +12,7 @@ function Home({ data, setData }) {
     const { signal } = controller;
     if (search) {
       axios.get(`https://newsapi.org/v2/everything?q=${search}&apiKey=${process.env.REACT_APP_API_KEY}`, { signal })
+        // eslint-disable-next-line no-console
         .then((res) => setData({ ...data, '/search': res.data.articles })).catch((error) => console.log(error.message));
     }
     return () => { controller.abort(); setData({ ...data, '/search': [{}] }); };

@@ -9,7 +9,7 @@ function Searched({ data, search }) {
     <div>
       {(data.length === 1 && !data[0].url) ? (
         <div style={{
-          position: 'fixed', top: '50%', left: '50%',
+          position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
         }}
         >
           <ReactLoading
